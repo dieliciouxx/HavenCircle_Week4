@@ -1,0 +1,214 @@
+<style>
+
+/* ALL TEXT IN ARIAL */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#f5faf8;
+  color:#0b283a;
+}
+
+/* BACK BUTTON */
+.back-container{
+  max-width:1200px;
+  margin:20px auto 0;
+  padding:0 20px;
+}
+
+.back-button{
+  display:inline-block;
+  background:#4678a8;
+  color:white;
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.2s ease;
+}
+
+.back-button:hover{
+  background:#355f87;
+}
+
+/* HERO */
+.hero{
+  max-width:1200px;
+  margin:40px auto;
+  background:#f7f2e5;
+  border-radius:15px;
+  padding:60px 40px;
+  display:flex;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.hero-text{
+  flex:1;
+}
+
+.mini-title{
+  color:#4678a8;
+  font-size:0.9rem;
+  font-weight:bold;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+
+.hero-text h1{
+  font-size:3rem;
+  margin-bottom:20px;
+  line-height:1.1;
+}
+
+.hero-text span{
+  color:#4678a8;
+}
+
+.hero-text p{
+  max-width:600px;
+  color:#444;
+  font-size:1.05rem;
+}
+
+/* HERO INFO BOX */
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.image-box{
+  width:350px;
+  min-height:350px;
+  background:#dcebe6;
+  border-radius:15px;
+  padding:25px;
+  color:#0b283a;
+  font-size:0.95rem;
+  line-height:1.8;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:left;
+}
+
+/* BIBLE VERSE */
+.bible-verse{
+  margin-top:25px;
+  color:#7bb6e8;
+  font-style:italic;
+  font-weight:bold;
+  line-height:1.8;
+}
+
+/* FOOTER */
+.site-footer{
+  text-align:center;
+  background:#4678a8;
+  color:white;
+  padding:20px;
+  margin-top:40px;
+}
+
+.site-footer p{
+  margin:4px 0;
+  font-size:0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text p{
+    margin:auto;
+  }
+
+  .image-box{
+    width:100%;
+  }
+
+}
+
+</style>
+
+
+<!-- BACK BUTTON -->
+<div class="back-container">
+  <a href="features.html" class="back-button">
+    ← Back
+  </a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-text">
+
+    <div class="mini-title">
+      LEARN MORE
+    </div>
+
+    <h1>
+      Discover How <span>MindHaven</span>
+      Supports Your Mental Wellness
+    </h1>
+
+    <p>
+      MindHaven is designed to help students and individuals
+      improve their mental well-being through helpful tools,
+      motivational support, and wellness resources.
+    </p>
+
+  </div>
+
+  <div class="hero-image">
+
+    <div class="image-box">
+
+      <p>
+        MindHaven is a safe and supportive platform designed to help
+        students and individuals improve their mental well-being through
+        simple and meaningful tools. Our goal is to create a space where
+        people can express their emotions, manage stress, and feel
+        supported in their daily lives. Through features like mood
+        tracking, private journaling, daily motivation, and wellness
+        guides, MindHaven encourages self-care, emotional awareness,
+        and personal growth. We believe that mental health is just as
+        important as physical health, and everyone deserves a place
+        where they can feel heard, understood, and valued.
+      </p>
+
+      <p class="bible-verse">
+        “Do not be anxious about anything, but in every situation,
+        by prayer and petition, with thanksgiving, present your
+        requests to God. And the peace of God... will guard your
+        hearts and your minds.”
+
+        <br><br>
+
+        — Philippians 4:6-7
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>&copy; 2026 MindHaven. All rights reserved.</p>
+  <p>Promoting Good Health and Well-being (SDG 3)</p>
+</footer>

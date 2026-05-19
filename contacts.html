@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindHaven | Contacts</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5faf8;
+      color: #0b283a;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      background: #4678a8;
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo h1 {
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.2s ease;
+    }
+
+    .navbar a.active,
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar .get-started-btn {
+      background: white;
+      color: #4678a8;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: 0.2s ease;
+    }
+
+    .navbar .get-started-btn:hover {
+      background: #f8fbfa;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    main {
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      background-color: #f7f2e5;
+      border-radius: 14px;
+      padding: 50px 40px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: -40px;
+      bottom: -60px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, #c8dfc5 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 120px;
+      top: -40px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #d8e8d4 0%, transparent 70%);
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+    }
+
+    .hero-text .label {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      color: #4678a8;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #0b283a;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .hero-text h2 span {
+      color: #4678a8;
+    }
+
+    .hero-text p {
+      margin-top: 14px;
+      font-size: 1rem;
+      color: #3a4f5e;
+      max-width: 400px;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 520px;
+      width: 520px;
+      height: 360px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #dfe9e5;
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #0b283a;
+      margin-bottom: 22px;
+    }
+
+    .card-title .icon {
+      font-size: 1.2rem;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: bold;
+      color: #0b283a;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap .input-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+      color: #888;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px 10px 34px;
+      border: 1px solid #d8e4df;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #0b283a;
+      background: #f9fcfa;
+      outline: none;
+      transition: border 0.2s;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #aab8c2;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #4678a8;
+      background: white;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      padding-left: 12px;
+    }
+
+    .no-icon input {
+      padding-left: 12px;
+    }
+
+    .btn-send {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #5a7a5a;
+      color: white;
+      padding: 11px 22px;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease;
+      margin-top: 8px;
+    }
+
+    .btn-send:hover {
+      background: #4a6a4a;
+      transform: translateY(-1px);
+    }
+
+    .faq-card {
+      display: grid;
+      grid-template-columns: 1fr 160px;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .faq-content {
+      padding: 24px;
+    }
+
+    .faq-content h4 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #0b283a;
+      margin-bottom: 14px;
+    }
+
+    .faq-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .faq-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eef3f0;
+      cursor: pointer;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item button {
+      all: unset;
+      color: #4678a8;
+      font-size: 0.88rem;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .faq-item span {
+      color: #4678a8;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-left: 10px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 6px 0 10px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .faq-item.open + .faq-answer {
+      display: block;
+    }
+
+    .faq-plant {
+      background: #eef5ec;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .faq-plant .placeholder-box {
+      background: #d6e8d4;
+      width: 120px;
+      height: 130px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #4a6a4a;
+      font-weight: bold;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .reach-card h4 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #0b283a;
+      margin-bottom: 18px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .contact-row .ci {
+      width: 32px;
+      height: 32px;
+      background: #e8f0ec;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .contact-row .ct {
+      font-size: 0.88rem;
+    }
+
+    .contact-row .ct strong {
+      display: block;
+      font-weight: bold;
+      color: #0b283a;
+      margin-bottom: 2px;
+    }
+
+    .contact-row .ct span {
+      color: #555;
+      display: block;
+      line-height: 1.5;
+    }
+
+    .social-label {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #0b283a;
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      width: 34px;
+      height: 34px;
+      background: #4678a8;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .social-icons a:hover {
+      background: #3a628a;
+    }
+
+    .crisis-card {
+      background: #eef5ec;
+      border: 1px solid #c8dfc5;
+    }
+
+    .crisis-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .crisis-icon {
+      width: 46px;
+      height: 46px;
+      background: #5a7a5a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .crisis-card h4 {
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #0b283a;
+    }
+
+    .crisis-card p {
+      font-size: 0.88rem;
+      color: #3a4f3a;
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .crisis-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      font-size: 0.88rem;
+      color: #0b283a;
+      line-height: 1.8;
+    }
+
+    .site-footer {
+      text-align: center;
+      background: #4678a8;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .site-footer p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        flex-direction: column;
+      }
+
+      .navbar ul {
+        justify-content: center;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .right-col {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 24px;
+      }
+
+      .hero-text p {
+        margin: 14px auto 0;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: auto;
+        flex: 0 0 auto;
+        justify-content: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+      }
+
+      .form-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+
+      .faq-card {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-plant {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <h1>MindHaven</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contacts.html" class="active">Contacts</a></li>
+        <li><a href="get-started.html" class="get-started-btn">Get Started</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="label">Contacts</p>
+        <h2>Let's Talk.<br><span>We're Here for You.</span></h2>
+        <p>Whether you have a question, need support or just want to say Hello — we'd love to hear from you.</p>
+      </div>
+      <div class="hero-image">
+        <img src="image.jpg" alt="MindHaven contacts illustration" />
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <div class="left-col">
+        <div class="card">
+          <div class="card-title">
+            <span class="icon">🌿</span>
+            Send Us a Message
+          </div>
+          <div class="form-layout">
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <div class="input-wrap">
+                <span class="input-icon">👤</span>
+                <input type="text" id="fullname" placeholder="Enter your name" />
+              </div>
+            </div>
+
+            <div class="form-group no-icon">
+              <label for="subject">Subject</label>
+              <div class="input-wrap">
+                <input type="text" id="subject" placeholder="What is this about?" style="padding-left:12px;" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <div class="input-wrap">
+                <span class="input-icon">✉️</span>
+                <input type="email" id="email" placeholder="Enter your email" />
+              </div>
+            </div>
+
+            <div class="form-group full">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Type your message here..."></textarea>
+            </div>
+          </div>
+          <button class="btn-send">🌿 Send Message</button>
+        </div>
+
+        <div class="card faq-card" style="padding:0;">
+          <div class="faq-content">
+            <h4>Frequently Asked Questions</h4>
+            <ul class="faq-list">
+              <li>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <button type="button">Is MindHaven really anonymous?</button>
+                  <span>+</span>
+                </div>
+                <div class="faq-answer">Yes! MindHaven does not require you to provide any identifying information. You can use the journal and other features without creating an account.</div>
+              </li>
+              <li>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <button type="button">How is my data and privacy protected?</button>
+                  <span>+</span>
+                </div>
+                <div class="faq-answer">We use industry-standard encryption to keep your data safe. We never share personal data with third parties without your consent.</div>
+              </li>
+              <li>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <button type="button">How can I find professional Help?</button>
+                  <span>+</span>
+                </div>
+                <div class="faq-answer">Visit our Resources page for a curated list of licensed mental health professionals and hotlines available in the Philippines.</div>
+              </li>
+              <li>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                  <button type="button">Can I suggest resources or give feedback?</button>
+                  <span>+</span>
+                </div>
+                <div class="faq-answer">Absolutely! Use the feedback form on this page or visit the Feedback section. We read every suggestion and use it to improve MindHaven.</div>
+              </li>
+            </ul>
+          </div>
+          <div class="faq-plant">
+            <div class="placeholder-box">Image<br>Here</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-col">
+        <div class="card reach-card">
+          <h4>Other ways to Reach us</h4>
+
+          <div class="contact-row">
+            <div class="ci">✉️</div>
+            <div class="ct">
+              <strong>Email</strong>
+              <span>support@email.com</span>
+              <span>We usually respond within 24 hours.</span>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="ci">📞</div>
+            <div class="ct">
+              <strong>Hotline</strong>
+              <span>+63 912 346 6789</span>
+              <span>Mon – Fri, 8:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="ci">📍</div>
+            <div class="ct">
+              <strong>Address</strong>
+              <span>123 Wellness Lane, Mindful City,</span>
+              <span>Philippines 1000</span>
+            </div>
+          </div>
+
+          <p class="social-label">Connect with Us</p>
+          <div class="social-icons">
+            <a href="#" title="Facebook">f</a>
+            <a href="#" title="Instagram">in</a>
+            <a href="#" title="X / Twitter">X</a>
+            <a href="#" title="Email">@</a>
+          </div>
+        </div>
+
+        <div class="card crisis-card">
+          <div class="crisis-header">
+            <div class="crisis-icon">🤝</div>
+            <h4>Need Immediate Help?</h4>
+          </div>
+          <p>If you are in crisis or need urgent support, please contact their hotlines:</p>
+          <ul>
+            <li>National Center for Mental Health: 1553</li>
+            <li>Hopeline Philippines: 0917 558 4673</li>
+            <li>NCMH Crisis Hotline: (02) 8893-7603</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MindHaven. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('span').textContent = '+';
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        el.querySelector('span').textContent = '−';
+      }
+    }
+  </script>
+</body>
+</html>
