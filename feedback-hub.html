@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>MindHaven | Feedback Hub</title>
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f4faf5;
+  color:#234;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* PLANT BACKGROUND */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  width:250px;
+  height:250px;
+  background:rgba(110,180,120,0.12);
+  border-radius:50%;
+  z-index:-1;
+}
+
+body::before{
+  top:-80px;
+  left:-80px;
+}
+
+body::after{
+  bottom:-80px;
+  right:-80px;
+}
+
+/* HEADER */
+.site-header{
+  background:#4678a8;
+  color:white;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo h1{
+  font-size:1.5rem;
+  font-weight:normal;
+  color:white;
+}
+
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  padding:8px 16px;
+  border-radius:8px;
+  transition:0.2s ease;
+}
+
+.navbar a.active,
+.navbar a:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+/* GET STARTED BUTTON */
+.navbar .get-started-btn{
+  background:white;
+  color:#4678a8;
+  padding:12px 24px;
+  font-weight:bold;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+  transition:0.2s ease;
+}
+
+.navbar .get-started-btn:hover{
+  background:#f8fbfa;
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* MAIN CONTAINER */
+.feedback-container{
+  max-width:1100px;
+  margin:50px auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* LEFT SIDE */
+.feedback-info{
+  background:white;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  position:relative;
+  overflow:hidden;
+}
+
+.feedback-info::before{
+  content:"🌿";
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:45px;
+  opacity:0.3;
+}
+
+.feedback-info h1{
+  font-size:42px;
+  color:#2d6a4f;
+  margin-bottom:20px;
+}
+
+.feedback-info p{
+  line-height:1.8;
+  color:#4a5a5a;
+  margin-bottom:25px;
+}
+
+/* FEEDBACK TIPS */
+.tips{
+  margin-top:20px;
+}
+
+.tip-box{
+  background:#eef8f0;
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:15px;
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+.tip-icon{
+  font-size:24px;
+}
+
+/* RIGHT SIDE FORM */
+.feedback-form{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+.feedback-form h2{
+  color:#2d6a4f;
+  margin-bottom:25px;
+  font-size:30px;
+}
+
+/* INPUTS */
+.input-group{
+  margin-bottom:20px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:bold;
+  color:#355;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+  width:100%;
+  padding:14px;
+  border:1px solid #cfe6d4;
+  border-radius:12px;
+  background:#f8fffa;
+  outline:none;
+  transition:0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+  border-color:#74c69d;
+  background:white;
+}
+
+textarea{
+  resize:none;
+  height:140px;
+}
+
+/* BUTTON */
+.submit-btn{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:14px;
+  background:#4678a8;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+  background:#3a628a;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#567;
+  margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+  .feedback-container{
+    grid-template-columns:1fr;
+  }
+
+  .site-header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .navbar ul{
+    justify-content:center;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+
+  <div class="logo">
+    <h1>MindHaven</h1>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="features.html">Features</a>
+      </li>
+
+      <li>
+        <a href="resources.html">Resources</a>
+      </li>
+
+      <li>
+        <a href="about.html">About Us</a>
+      </li>
+
+      <li>
+        <a href="contacts.html">Contacts</a>
+      </li>
+
+      <li>
+        <a href="get-started.html" class="get-started-btn">
+          Get Started
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+</header>
+
+<!-- MAIN -->
+<section class="feedback-container">
+
+  <!-- LEFT SIDE -->
+  <div class="feedback-info">
+
+    <h1>Feedback Hub 🌱</h1>
+
+    <p>
+      Your voice matters in MindHaven.
+      Share your thoughts, suggestions,
+      and experiences to help us improve
+      the website and create a more peaceful
+      and supportive environment for everyone.
+    </p>
+
+    <div class="tips">
+
+      <div class="tip-box">
+        <div class="tip-icon">🍃</div>
+
+        <div>
+          Share your honest experience
+          with the website.
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🌿</div>
+
+        <div>
+          Suggest new features
+          or improvements.
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-icon">🪴</div>
+
+        <div>
+          Help us create a calm and
+          user-friendly platform.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="feedback-form">
+
+    <h2>Send Feedback</h2>
+
+    <form>
+
+      <div class="input-group">
+        <label>Full Name</label>
+
+        <input
+          type="text"
+          placeholder="Enter your name"
+        >
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+
+        <input
+          type="email"
+          placeholder="Enter your email"
+        >
+      </div>
+
+      <div class="input-group">
+        <label>Feedback Type</label>
+
+        <select>
+          <option>General Feedback</option>
+          <option>Suggestion</option>
+          <option>Bug Report</option>
+          <option>Website Experience</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Your Message</label>
+
+        <textarea
+          placeholder="Write your feedback here..."
+        ></textarea>
+      </div>
+
+      <button class="submit-btn">
+        Submit Feedback
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 MindHaven |
+  Growing Together with Positivity 🌿
+</footer>
+
+</body>
+</html>
