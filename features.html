@@ -19,7 +19,6 @@
       line-height: 1.6;
     }
 
-    /* HEADER - Same as index.html */
     .site-header {
       background: #4678a8;
       color: white;
@@ -74,19 +73,12 @@
       transition: 0.2s ease;
     }
 
-    .navbar .get-started-btn:hover {
-      background: #f8fbfa;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
-
     main {
       width: 100%;
       max-width: 1200px;
       margin: 30px auto;
     }
 
-    /* HERO */
     .hero {
       background-color: #f7f2e5;
       color: #0b283a;
@@ -97,32 +89,12 @@
       border-radius: 14px;
     }
 
-    .hero-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
     .hero-left {
       flex: 1;
-      text-align: left;
-    }
-
-    .mini-title {
-      color: #4678a8;
-      font-size: 0.9rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .hero-left h1 {
       font-size: 2.8rem;
-      line-height: 1.1;
-      color: #0b283a;
-      margin-bottom: 15px;
       font-weight: bold;
     }
 
@@ -130,37 +102,19 @@
       color: #4678a8;
     }
 
-    .hero-left p {
-      color: #0b283a;
-      max-width: 520px;
-      font-size: 1.05rem;
-      margin-top: 15px;
-    }
-
     .hero-buttons {
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
       margin-top: 25px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
       background: #4678a8;
       color: white;
       padding: 12px 20px;
-      text-decoration: none;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
-      border: none;
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      background: #3a628a;
     }
 
     .btn-secondary {
@@ -169,78 +123,9 @@
       border: 1px solid #d8e4df;
     }
 
-    .btn-secondary:hover {
-      background: #f0f0f0;
-    }
-
-    .hero-image {
-      flex: 0.8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-image .placeholder-box {
-      background: #dcebe6;
-      width: 280px;
-      height: 280px;
-      border-radius: 14px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #4678a8;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    /* FEATURES SECTION */
     .features-section {
       padding: 40px 0;
       text-align: center;
-    }
-
-    .section-title {
-      margin-bottom: 40px;
-    }
-
-    .section-title h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: #0b283a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .section-title h2::before,
-    .section-title h2::after {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 2px;
-      background-color: #4678a8;
-    }
-
-    .section-title h2::before {
-      margin-right: 10px;
-    }
-
-    .section-title h2::after {
-      margin-left: 10px;
-    }
-
-    .section-title p {
-      color: #555;
-      font-size: 1rem;
-    }
-
-    /* GRID LAYOUT */
-    .features-layout {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-      flex-wrap: wrap;
     }
 
     .cards {
@@ -250,97 +135,55 @@
       gap: 20px;
     }
 
+    .features-layout {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
     .feature-card {
       background: white;
       padding: 24px 20px;
-      border: 1px solid #dfe9e5;
       border-radius: 10px;
-      text-align: left;
-      transition: 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #dfe9e5;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
+      gap: 10px;
+      text-align: left;
     }
 
-    .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(70, 120, 168, 0.15);
-    }
-
-    .feature-card .icon-placeholder {
+    .icon-placeholder {
       width: 40px;
       height: 40px;
       background: #dcebe6;
-      border-radius: 8px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: #4678a8;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .feature-card h3 {
-      color: #0b283a;
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-    }
-
-    .feature-card p {
-      font-size: 0.95rem;
-      color: #555;
+      justify-content: center;
+      border-radius: 8px;
     }
 
     .learn-more {
-      display: inline-block;
-      margin-top: 10px;
       color: #4678a8;
-      text-decoration: none;
-      font-size: 0.9rem;
       font-weight: bold;
+      font-size: 0.9rem;
     }
 
-    /* IMPACT SECTION */
+    .feature-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     .impact {
       flex: 1;
       min-width: 280px;
-      border: 1px solid #dfe9e5;
-      border-radius: 10px;
-      padding: 28px;
       background: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 28px;
+      border-radius: 10px;
+      border: 1px solid #dfe9e5;
     }
 
-    .impact h2 {
-      color: #4678a8;
-      margin-bottom: 25px;
-      font-size: 1.5rem;
-    }
-
-    .impact-item {
-      margin-bottom: 20px;
-      border-bottom: 1px solid #dfe9e5;
-      padding-bottom: 15px;
-    }
-
-    .impact-item:last-child {
-      border: none;
-    }
-
-    .impact-item h4 {
-      color: #0b283a;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-
-    .impact-item p {
-      color: #555;
-      font-size: 0.95rem;
-    }
-
-    /* FOOTER - Same as index.html */
     .site-footer {
       text-align: center;
       background: #4678a8;
@@ -349,37 +192,9 @@
       margin-top: 30px;
     }
 
-    .site-footer p {
-      margin: 4px 0;
-      font-size: 0.9rem;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .site-header {
-        flex-direction: column;
-      }
-
-      .navbar ul {
-        justify-content: center;
-      }
-
       .hero {
         flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-left {
-        text-align: center;
-      }
-
-      .hero-left p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
       }
 
       .cards {
@@ -391,181 +206,109 @@
       }
     }
 
-    @media (max-width: 600px) {
-      .hero {
-        padding: 40px 20px;
-      }
-
-      .hero-left h1 {
-        font-size: 2rem;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER - Same as index.html -->
-  <header class="site-header">
-    <div class="logo">
-      <h1>MindHaven</h1>
+<header class="site-header">
+  <div class="logo">
+    <h1>MindHaven</h1>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="features.html" class="active">Features</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="get-started.html" class="get-started-btn">Get Started</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>EVERYTHING YOU NEED <br><span>FOR A BETTER YOU.</span></h1>
+    <p>MindHaven gives you tools and support for mental wellness.</p>
+
+    <div class="hero-buttons">
+      <a href="#features" class="btn">Discover Features</a>
+      <a href="about.html" class="btn btn-secondary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="features-section" id="features">
+
+  <div class="features-layout">
+
+    <div class="cards">
+
+      <div class="feature-card">
+        <div class="icon-placeholder">📝</div>
+        <h3>Private Journal</h3>
+        <p>Write thoughts safely.</p>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-placeholder">💬</div>
+        <h3>Daily Motivation</h3>
+        <p>Inspirational quotes daily.</p>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-placeholder">😊</div>
+        <h3>Mood Tracker</h3>
+        <p>Track emotions daily.</p>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-placeholder">🤝</div>
+        <h3>Support Resources</h3>
+        <p>Get help anytime.</p>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-placeholder">🌿</div>
+        <h3>Wellness Guides</h3>
+        <p>Learn self-care tips.</p>
+        <span class="learn-more">Learn more →</span>
+      </div>
+
+      <!-- FIXED FEEDBACK HUB -->
+      <a href="feedback-hub.html" class="feature-link">
+        <div class="feature-card">
+          <div class="icon-placeholder">👥</div>
+          <h3>Feedback Hub</h3>
+          <p>Share your thoughts and help us improve MindHaven.</p>
+          <span class="learn-more">Learn more →</span>
+        </div>
+      </a>
+
     </div>
 
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="features.html" class="active">Features</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contacts.html">Contacts</a></li>
-        <li><a href="get-started.html" class="get-started-btn">Get Started</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="impact">
+      <h2>Our Impact</h2>
+      <p>Caring community, privacy, and wellness support.</p>
+    </div>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-left">
-          <div class="mini-title">FEATURES</div>
-          <h1>
-            EVERYTHING YOU NEED <br>
-            <span>FOR A BETTER YOU.</span>
-          </h1>
-          <p>
-            MindHaven gives you the tools, support,
-            and inspiration to take care of your
-            mind and live a better life.
-          </p>
-          <div class="hero-buttons">
-            <a href="#features" class="btn">
-              Discover Features
-            </a>
-            <a href="about.html" class="btn btn-secondary">
-              Learn More
-            </a>
-          </div>
-        </div>
+  </div>
 
-        <div class="hero-image">
-          <div class="placeholder-box">
-            IMAGE HERE
-          </div>
-        </div>
-      </div>
-    </section>
+</section>
 
-    <!-- FEATURES -->
-    <section class="features-section" id="features">
-      <div class="section-title">
-        <h2>What You'll Find Here</h2>
-        <p>
-          Thoughtfully designed features to help you feel your best.
-        </p>
-      </div>
+</main>
 
-      <div class="features-layout">
-        <!-- LEFT GRID -->
-        <div class="cards">
-          <div class="feature-card">
-            <div class="icon-placeholder">📝</div>
-            <div>
-              <h3>Private Journal</h3>
-              <p>
-                Write your own thoughts anonymously in a safe and secure space.
-              </p>
-              <a href="#" class="learn-more">Learn more →</a>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon-placeholder">💬</div>
-            <div>
-              <h3>Daily Motivation</h3>
-              <p>
-                Inspiring affirmations and quotes to brighten your day.
-              </p>
-              <a href="#" class="learn-more">Learn more →</a>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon-placeholder">😊</div>
-            <div>
-              <h3>Mood Tracker</h3>
-              <p>
-                Track your mood and spot patterns to grow self-awareness.
-              </p>
-              <a href="#" class="learn-more">Learn more →</a>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon-placeholder">🤝</div>
-            <div>
-              <h3>Support Resources</h3>
-              <p>
-                Access trusted helplines and professional support whenever needed.
-              </p>
-              <a href="#" class="learn-more">Learn more →</a>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon-placeholder">🌿</div>
-            <div>
-              <h3>Wellness Guides</h3>
-              <p>
-                Helpful tips and guides on stress, sleep, anxiety, and wellness.
-              </p>
-              <a href="#" class="learn-more">Learn more →</a>
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div class="icon-placeholder">👥</div>
-            <div>
-              <h3>Feedback Hub</h3>
-              <p>
-                Share your thoughts and help us improve MindHaven for everyone.
-              </p>
-              <a href="#" class="learn-more">Learn more →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT SIDE - IMPACT -->
-        <div class="impact">
-          <h2>Our Impact:</h2>
-          <div class="impact-item">
-            <h4>A Caring Community</h4>
-            <p>
-              Building a safe space where everyone belongs.
-            </p>
-          </div>
-          <div class="impact-item">
-            <h4>Your Privacy, Always</h4>
-            <p>
-              We protect your identity and personal data.
-            </p>
-          </div>
-          <div class="impact-item">
-            <h4>Better You, Better World</h4>
-            <p>
-              Small steps support your well-being and a brighter future.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER - Same as index.html -->
-  <footer class="site-footer">
-    <p>&copy; 2026 MindHaven. All rights reserved.</p>
-    <p>Promoting Good Health and Well-being (SDG 3)</p>
-  </footer>
+<footer class="site-footer">
+  <p>&copy; 2026 MindHaven. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
