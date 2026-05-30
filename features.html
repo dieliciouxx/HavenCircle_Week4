@@ -1,212 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindHaven | Features</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindHaven | Features</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      background: #f5faf8;
-      color: #0b283a;
-      line-height: 1.6;
-    }
+body {
+  background: #f5faf8;
+  color: #0b283a;
+  line-height: 1.6;
+}
 
-    .site-header {
-      background: #4678a8;
-      color: white;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+/* HEADER */
+.site-header {
+  background: #4678a8;
+  color: white;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
 
-    .logo h1 {
-      font-size: 1.5rem;
-      font-weight: normal;
-    }
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 8px;
-      transition: 0.2s ease;
-    }
+.navbar a.active,
+.navbar a:hover {
+  background: rgba(255,255,255,0.2);
+}
 
-    .navbar a.active,
-    .navbar a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+/* HERO */
+.hero {
+  background-color: #f7f2e5;
+  padding: 60px 40px;
+  display: flex;
+  gap: 40px;
+  border-radius: 14px;
+  margin: 30px auto;
+  max-width: 1200px;
+}
 
-    .navbar .get-started-btn {
-      background: white;
-      color: #4678a8;
-      padding: 12px 24px;
-      font-weight: bold;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transition: 0.2s ease;
-    }
+.hero-left h1 {
+  font-size: 2.5rem;
+}
 
-    main {
-      width: 100%;
-      max-width: 1200px;
-      margin: 30px auto;
-    }
+.hero-left span {
+  color: #4678a8;
+}
 
-    .hero {
-      background-color: #f7f2e5;
-      color: #0b283a;
-      padding: 60px 40px;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      border-radius: 14px;
-    }
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
 
-    .hero-left {
-      flex: 1;
-    }
+.btn {
+  background: #4678a8;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .hero-left h1 {
-      font-size: 2.8rem;
-      font-weight: bold;
-    }
+.btn-secondary {
+  background: white;
+  color: #4678a8;
+  border: 1px solid #ccc;
+}
 
-    .hero-left h1 span {
-      color: #4678a8;
-    }
+/* FEATURES */
+.features-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
 
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 25px;
-    }
+.features-layout {
+  display: flex;
+  gap: 30px;
+}
 
-    .btn {
-      background: #4678a8;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* CARDS */
+.cards {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
 
-    .btn-secondary {
-      background: white;
-      color: #4678a8;
-      border: 1px solid #d8e4df;
-    }
+.feature-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-    .features-section {
-      padding: 40px 0;
-      text-align: center;
-    }
+.icon-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #dcebe6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
-    .cards {
-      flex: 3;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+.learn-more {
+  color: #4678a8;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
 
-    .features-layout {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+/* LINK WRAPPER */
+.feature-link {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .feature-card {
-      background: white;
-      padding: 24px 20px;
-      border-radius: 10px;
-      border: 1px solid #dfe9e5;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: left;
-    }
+/* IMPACT */
+.impact {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    .icon-placeholder {
-      width: 40px;
-      height: 40px;
-      background: #dcebe6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-    }
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  background: #4678a8;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+}
 
-    .learn-more {
-      color: #4678a8;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .features-layout {
+    flex-direction: column;
+  }
 
-    .feature-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
+  .cards {
+    grid-template-columns: 1fr;
+  }
 
-    .impact {
-      flex: 1;
-      min-width: 280px;
-      background: white;
-      padding: 28px;
-      border-radius: 10px;
-      border: 1px solid #dfe9e5;
-    }
-
-    .site-footer {
-      text-align: center;
-      background: #4678a8;
-      color: white;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .features-layout {
-        flex-direction: column;
-      }
-    }
-
-  </style>
+  .hero {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -223,17 +198,15 @@
       <li><a href="resources.html">Resources</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contacts.html">Contacts</a></li>
-      <li><a href="get-started.html" class="get-started-btn">Get Started</a></li>
     </ul>
   </nav>
 </header>
 
-<main>
-
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <h1>EVERYTHING YOU NEED <br><span>FOR A BETTER YOU.</span></h1>
-    <p>MindHaven gives you tools and support for mental wellness.</p>
+    <p>Tools for mental wellness, reflection, and growth.</p>
 
     <div class="hero-buttons">
       <a href="#features" class="btn">Discover Features</a>
@@ -242,72 +215,70 @@
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features-section" id="features">
-
   <div class="features-layout">
 
+    <!-- LEFT -->
     <div class="cards">
 
       <div class="feature-card">
         <div class="icon-placeholder">📝</div>
         <h3>Private Journal</h3>
-        <p>Write thoughts safely.</p>
-        <span class="learn-more">Learn more →</span>
+        <p>Write your thoughts safely.</p>
+        <a href="private-journal.html" class="learn-more">Learn more →</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-placeholder">📌</div>
+        <h3>Sticky Notes</h3>
+        <p>Quick reminders and notes.</p>
+        <a href="sticky-notes.html" class="learn-more">Learn more →</a>
       </div>
 
       <div class="feature-card">
         <div class="icon-placeholder">💬</div>
         <h3>Daily Motivation</h3>
-        <p>Inspirational quotes daily.</p>
-        <span class="learn-more">Learn more →</span>
+        <p>Stay inspired every day.</p>
+        <a href="#">Learn more →</a>
       </div>
 
       <div class="feature-card">
         <div class="icon-placeholder">😊</div>
         <h3>Mood Tracker</h3>
-        <p>Track emotions daily.</p>
-        <span class="learn-more">Learn more →</span>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-placeholder">🤝</div>
-        <h3>Support Resources</h3>
-        <p>Get help anytime.</p>
-        <span class="learn-more">Learn more →</span>
+        <p>Track your emotions.</p>
+        <a href="#">Learn more →</a>
       </div>
 
       <div class="feature-card">
         <div class="icon-placeholder">🌿</div>
         <h3>Wellness Guides</h3>
-        <p>Learn self-care tips.</p>
-        <span class="learn-more">Learn more →</span>
+        <p>Self-care resources.</p>
+        <a href="#">Learn more →</a>
       </div>
 
-      <!-- FIXED FEEDBACK HUB -->
-      <a href="feedback-hub.html" class="feature-link">
-        <div class="feature-card">
-          <div class="icon-placeholder">👥</div>
-          <h3>Feedback Hub</h3>
-          <p>Share your thoughts and help us improve MindHaven.</p>
-          <span class="learn-more">Learn more →</span>
-        </div>
-      </a>
+      <!-- FEEDBACK HUB -->
+      <div class="feature-card">
+        <div class="icon-placeholder">👥</div>
+        <h3>Feedback Hub</h3>
+        <p>Share your thoughts with us.</p>
+        <a href="feedback-hub.html" class="learn-more">Learn more →</a>
+      </div>
 
     </div>
 
+    <!-- RIGHT -->
     <div class="impact">
       <h2>Our Impact</h2>
-      <p>Caring community, privacy, and wellness support.</p>
+      <p>We build a safe and supportive space for everyone.</p>
     </div>
 
   </div>
-
 </section>
 
-</main>
-
+<!-- FOOTER -->
 <footer class="site-footer">
-  <p>&copy; 2026 MindHaven. All rights reserved.</p>
+  <p>&copy; 2026 MindHaven</p>
 </footer>
 
 </body>
